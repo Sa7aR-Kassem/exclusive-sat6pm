@@ -15,7 +15,7 @@ export default function ProductSlider({ images }: { images: string[] }) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const mainSliderOptions = {
     thumbs: { swiper: thumbsSwiper },
-    ...swiperOptions,
+    modules: [FreeMode, Thumbs],
   };
 
   const thumbnailSliderOptions = {
@@ -25,7 +25,7 @@ export default function ProductSlider({ images }: { images: string[] }) {
     freeMode: true,
     watchSlidesProgress: true,
     direction: "vertical" as const,
-    ...swiperOptions,
+    modules: [FreeMode, Thumbs],
   };
   return (
     <div className="grid lg:grid-cols-4 gap-4">
